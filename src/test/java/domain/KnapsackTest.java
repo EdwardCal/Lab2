@@ -25,13 +25,21 @@ public class KnapsackTest {
         System.out.println("\nKNAPSACK PROBLEM SOLUTION");
         System.out.println(show(items));
 
-        Knapsack knapsack1 = new Knapsack(items, 14.5);
 
+        Knapsack knapsack1 = new Knapsack(items, 14.5);
+        System.out.println(knapsack1.toString());
 
         Knapsack knapsack2 = new Knapsack(items, 24.5);
+        System.out.println(knapsack2.toString());
+
         Knapsack knapsack3 = new Knapsack(items, 35);
+        System.out.println(knapsack3.toString());
+
         Knapsack knapsack4 = new Knapsack(items, 12);
+        System.out.println(knapsack4.toString());
+
         Knapsack knapsack5 = new Knapsack(items, 4.5);
+        System.out.println(knapsack5.toString());
     }
 
     private String show(Item[] a) {

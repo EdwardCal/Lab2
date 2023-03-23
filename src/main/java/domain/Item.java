@@ -64,7 +64,7 @@ public class Item {
                 ", media=" + media +
                 ", valueWeight=" + valueWeight +
                 '}';*/
-        return String.format("%20s, %12.2f, %12.2f", this.name,
-                this.value, this.weight);
+        return String.format("%20s, %12.2f, %12.2f, %12.2f", this.name,
+                this.value, this.weight, this.valueWeight);
     }
 }
