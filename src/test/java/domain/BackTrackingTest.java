@@ -45,10 +45,8 @@ public class BackTrackingTest {
                 {1, 0, 0, 1, 1, 0, 1, 1},
                 {1, 0, 0, 1, 1, 0, 0, 1},
         };
+        rt.printProblem(maze1);
 
-        System.out.println(rt.solveMaze(maze1));
-        System.out.println(rt.solveMaze(maze2));
-        System.out.println(rt.solveMaze(maze3));
-
+       rt.solveMaze(maze1);
     }
 }

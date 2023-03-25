@@ -2,14 +2,27 @@ package domain;
 
 public class RatInMaze {
     // Función para imprimir la solución
-    public static void printSolution(int[][] sol) {
+    public String printSolution(int[][] sol) {
         int N = sol.length;
+        String result="";
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                System.out.print(" " + sol[i][j] + " ");
+                result+=sol[i][j]+" ";
             }
-            System.out.println();
+            result+="\n";
         }
+        return result;
+    }
+    public String printProblem(int[][] maze) {
+        int N = maze.length;
+        String result="";
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                result+=maze[i][j]+" " ;
+            }
+            result+="\n";
+        }
+        return result;
     }
 
     // Función para verificar si una posición es segura
@@ -50,7 +63,7 @@ public class RatInMaze {
     }
 
     // Función para resolver el problema de Rat in a Maze
-    public static boolean solveMaze(int[][] maze) {
+    public String solveMaze(int[][] maze) {
         int N = maze.length;
         int[][] sol = new int[N][N];
 
@@ -59,12 +72,10 @@ public class RatInMaze {
 
         // se llama a la función recursiva para resolver el problema
         if (solveMazeUtil(maze, 0, 0, sol) == false) {
-            System.out.println("No hay solución para este laberinto");
-            return false;
+            return "No hay solución para este laberinto";
         }
 
         // se imprime la solución
-        printSolution(sol);
-        return true;
+        return printSolution(sol);
     }
 }

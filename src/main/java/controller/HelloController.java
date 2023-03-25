@@ -74,7 +74,7 @@ public class HelloController {
 
     @FXML
     void ratInMaze(ActionEvent event) {
-        loadPage("ratInMaze.fxml");
+        loadPage("RatMazeProblem.fxml");
     }
 
     @FXML
