@@ -34,7 +34,7 @@ public class SudokuSolver {
     }
 
     //this code just puts the board in a String
-    private String printSudoku(int[][] board) {
+    public String printSudoku(int[][] board) {
         String result = "";
         int size = board.length;
         for (int i = 0; i < size; i++) {
@@ -79,11 +79,11 @@ public class SudokuSolver {
     }
 
     //main method to resolve the sudoku
-    public void sudokuSolver(int[][] board){
+    public String sudokuSolver(int[][] board){
         if (solving(board, 0,0)){
-            System.out.println(printSudoku(board));
+            return(printSudoku(board));
         }else {
-            System.out.println("Solution doesn't exists");
+            return("Solution doesn't exists");
         }
     }
 }

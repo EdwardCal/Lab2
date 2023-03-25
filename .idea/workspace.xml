@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d930673b-dd58-4aa6-9571-e1387425c000" name="Changes" comment="-Add SudokuSolver class with almost all the code">
-      <change afterPath="$PROJECT_DIR$/src/test/java/domain/SudokuSolverTest.java" afterDir="false" />
+    <list default="true" id="d930673b-dd58-4aa6-9571-e1387425c000" name="Changes" comment="-Add SudokuSolver class and test">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/SudokuSolverController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ucr/lab2/SudokuSolver.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/SudokuSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/SudokuSolver.java" afterDir="false" />
     </list>
@@ -17,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TestNG Test Class" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="TestNG Test Class" />
       </list>
     </option>
   </component>
@@ -71,6 +72,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="controller" />
       <recent name="domain" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -80,7 +82,7 @@
       <recent name="domain" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SudokuSolverTest.testSudokuSolver">
+  <component name="RunManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ucr.lab2.HelloApplication" />
       <module name="lab2" />
@@ -195,7 +197,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679495506633</updated>
-      <workItem from="1679781307979" duration="1530000" />
+      <workItem from="1679781307979" duration="4551000" />
     </task>
     <task id="LOCAL-00001" summary="Lab2. I-2023">
       <created>1679500278241</created>
@@ -260,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679781514796</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="-Add SudokuSolver class and test">
+      <created>1679783831821</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679783831821</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,17 +290,7 @@
     <MESSAGE value="Lab2. I-2023" />
     <MESSAGE value="&#10;Creación de la interfaz para knapsack" />
     <MESSAGE value="-Add SudokuSolver class with almost all the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Add SudokuSolver class with almost all the code" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/domain/SudokuSolverTest.java</url>
-          <line>6</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="-Add SudokuSolver class and test" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Add SudokuSolver class and test" />
   </component>
 </project>
