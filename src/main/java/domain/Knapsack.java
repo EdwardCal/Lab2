@@ -55,8 +55,8 @@ public class Knapsack {
        double totalWeight=0;
        double totalValue=0;
        Item solution[] = solve();
-       String result="\nKNAPSACK PROBLEM SOLUTION";
-       result+="\nMAX WEIGHT: "+this.capacity;
+       String result="";
+       result+=""+this.capacity;
        result+="\nITEMS LIST...";
        result+="\n\t\tName\t\t\t\tValue\t\t\tWeight";
        int n = solution.length;
