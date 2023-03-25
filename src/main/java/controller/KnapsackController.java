@@ -1,5 +1,7 @@
 package controller;
 
+import domain.Item;
+import domain.Knapsack;
 import domain.NQueenProblem;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -16,14 +18,14 @@ public class KnapsackController {
     private TextArea textArea;
     @javafx.fxml.FXML
     private TableView tableView;
-    private String nQueenData; //sirve para el table view
+    private String knapsackData; //sirve para el table view
 
     @javafx.fxml.FXML
     public void initialize() {
         test(); //para recopilar info
 
         //agregamos las columnas al tableview
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 3; i++) {
             final int colIndex = i;
             TableColumn<List<String>, String> column = new TableColumn<>("col-"+(i+1));
             column.setCellValueFactory(data->new SimpleStringProperty(data.getValue().get(colIndex)));
@@ -34,13 +36,13 @@ public class KnapsackController {
 
     public ObservableList<List<String>> getData() {
         ObservableList<List<String>> data = FXCollections.observableArrayList();
-        nQueenData = nQueenData.replaceAll("\n",""); //para eliminar los saltos de linea
-        String a[] = nQueenData.split(" ");
+        knapsackData = knapsackData.replaceAll("\n",""); //para eliminar los saltos de linea
+        String a[] = knapsackData.split(" ");
         int count = 0;
         List<String> info = new ArrayList<>();
-        for (int i = 0; i < 64; i++) {
+        for (int i = 0; i < 36; i++) {
             info.add(a[i]);
-            if(count++==7){
+            if(count++==3){
                 data.add(info);
                 info = new ArrayList<>();
                 count = 0;
@@ -50,12 +52,23 @@ public class KnapsackController {
     }
 
     private void test() {
-        NQueenProblem nQueen = new NQueenProblem();
-        textArea.setText("N Queens Problem solution for a 8x8 board"
-                +"\n"+nQueen.solveNQueen(8)
-                +"\nN Queens Problem solution for a 4x4 board"
-                +"\n"+nQueen.solveNQueen(4)
+        Item items[] = new Item[12];
+        items[0] = new Item("Smart TV 65", 1000, 20);
+        items[1] = new Item("PS5", 600, 2);
+        items[2] = new Item("Libro java", 20, 1);
+        items[3] = new Item("Samsung Galaxy", 700, 0.5);
+        items[4] = new Item("Huawei", 400, 0.5);
+        items[5] = new Item("Libro C++", 25, 0.5);
+        items[6] = new Item("Xbox One", 500, 2.2);
+        items[7] = new Item("Drone", 500, 3);
+        items[8] = new Item("Proyector", 200, 3);
+        items[9] = new Item("Laptop", 800, 3);
+        items[10] = new Item("Impresora 3D", 800, 4);
+        items[11] = new Item("iPhone", 800, 0.5);
+
+        Knapsack knapsack = new Knapsack(items, 14.5);
+        textArea.setText(knapsack.toString()
         );
-        this.nQueenData = nQueen.solveNQueen(8); //para el table view
+        this.knapsackData = knapsack.toString(); //para el table view
     }
 }
