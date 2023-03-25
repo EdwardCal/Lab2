@@ -47,7 +47,7 @@ public class HelloController {
 
     @FXML
     void knapsackProblem(ActionEvent event) {
-        loadPage("knapsack.fxml");
+        loadPage("knapsackProblem.fxml");
     }
 
     @FXML

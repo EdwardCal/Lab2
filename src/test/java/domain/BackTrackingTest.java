@@ -15,4 +15,40 @@ public class BackTrackingTest {
         System.out.println("N Queens Problem solution for a 4x4 board");
         System.out.println(nQueen.solveNQueen(4));
     }
+    @Test
+    public void test2(){
+        RatInMaze rt= new RatInMaze();
+        int[][] maze1 = {
+                {1, 0, 0, 0},
+                {1, 1, 0, 1},
+                {0, 1, 0, 0},
+                {1, 1, 1, 1}
+        };
+        int maze2[][] = {
+                {1, 0, 0, 1, 1, 0, 0, 0},
+                {1, 0, 1, 1, 0, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 0, 0},
+                {0, 1, 1, 1, 1, 1, 1, 1},
+                {1, 0, 1, 0, 1, 0, 1, 1},
+                {1, 0, 0, 1, 1, 1, 1, 0},
+                {1, 0, 0, 1, 1, 0, 1, 1},
+                {1, 0, 0, 1, 1, 0, 0, 1},
+        };
+
+        int maze3[][] = {
+                {1, 1, 1, 1, 1, 1, 0, 0},
+                {0, 0, 0, 1, 1, 1, 1, 1},
+                {1, 1, 1, 0, 1, 1, 0, 0},
+                {0, 1, 1, 1, 1, 1, 0, 1},
+                {1, 0, 1, 0, 1, 1, 1, 1},
+                {1, 0, 0, 1, 1, 1, 1, 0},
+                {1, 0, 0, 1, 1, 0, 1, 1},
+                {1, 0, 0, 1, 1, 0, 0, 1},
+        };
+
+        System.out.println(rt.solveMaze(maze1));
+        System.out.println(rt.solveMaze(maze2));
+        System.out.println(rt.solveMaze(maze3));
+
+    }
 }
