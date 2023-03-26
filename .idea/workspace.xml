@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d930673b-dd58-4aa6-9571-e1387425c000" name="Changes" comment="&#10;Creación de la interfaz para knapsack">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/RatInMazeProblemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ucr/lab2/RatMazeProblem.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/RatInMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/RatInMaze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/domain/BackTrackingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/domain/BackTrackingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/KnapsackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/KnapsackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Knapsack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Knapsack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ucr/lab2/KnapsackProblem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ucr/lab2/KnapsackProblem.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,15 +53,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;TestNG&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.TestNG&quot;: &quot;&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "TestNG",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.TestNG": "",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="domain" />
@@ -171,6 +175,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679495506633</updated>
+      <workItem from="1679791183209" duration="899000" />
     </task>
     <task id="LOCAL-00001" summary="Lab2. I-2023">
       <created>1679500278241</created>
@@ -223,6 +228,9 @@
     </task>
     <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

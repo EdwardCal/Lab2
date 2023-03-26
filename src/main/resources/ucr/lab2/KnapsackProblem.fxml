@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -7,45 +8,66 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane prefHeight="601.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <AnchorPane prefHeight="599.0" prefWidth="824.0">
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KnapsackController">
+   <left>
+      <AnchorPane prefHeight="650.0" prefWidth="807.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane layoutX="-3.0" prefHeight="72.0" prefWidth="826.0" style="-fx-background-color: orange;">
+            <Pane prefHeight="107.0" prefWidth="807.0" style="-fx-background-color: orange;">
                <children>
-                  <Text layoutX="229.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Knapsack Problem Solution">
+                  <Text layoutX="154.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Knapsack Problem Solution">
                      <font>
-                        <Font name="Arial" size="30.0" />
+                        <Font size="38.0" />
                      </font>
                   </Text>
-               </children>
-            </Pane>
-            <TableView layoutX="46.0" layoutY="103.0" prefHeight="229.0" prefWidth="320.0" />
-            <TableView layoutX="477.0" layoutY="103.0" prefHeight="229.0" prefWidth="320.0" />
-            <TableView layoutX="46.0" layoutY="372.0" prefHeight="229.0" prefWidth="320.0" />
-            <TableView layoutX="477.0" layoutY="372.0" prefHeight="229.0" prefWidth="320.0" />
-            <Text layoutX="154.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Items List">
+               </children></Pane>
+            <TableView fx:id="tableView" layoutX="41.0" layoutY="151.0" prefHeight="200.0" prefWidth="261.0">
+              <columns>
+                <TableColumn prefWidth="107.0" text="Name" />
+                <TableColumn prefWidth="59.0" text="Value" />
+                  <TableColumn prefWidth="89.0" text="Weight" />
+              </columns>
+            </TableView>
+            <TableView fx:id="tableView1" layoutX="456.0" layoutY="151.0" prefHeight="200.0" prefWidth="261.0">
+               <columns>
+                  <TableColumn prefWidth="107.0" text="Name" />
+                  <TableColumn prefWidth="59.0" text="Value" />
+                  <TableColumn prefWidth="89.0" text="Weight" />
+               </columns>
+            </TableView>
+            <TableView fx:id="tableView2" layoutX="41.0" layoutY="413.0" prefHeight="200.0" prefWidth="261.0">
+               <columns>
+                  <TableColumn prefWidth="107.0" text="Name" />
+                  <TableColumn prefWidth="59.0" text="Value" />
+                  <TableColumn prefWidth="89.0" text="Weight" />
+               </columns>
+            </TableView>
+            <TableView fx:id="tableView3" layoutX="456.0" layoutY="413.0" prefHeight="200.0" prefWidth="261.0">
+               <columns>
+                  <TableColumn prefWidth="107.0" text="Name" />
+                  <TableColumn prefWidth="59.0" text="Value" />
+                  <TableColumn prefWidth="89.0" text="Weight" />
+               </columns>
+            </TableView>
+            <Text layoutX="125.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item List">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
-            <Text layoutX="486.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solution_1 max weigth 14.5">
+            <Text layoutX="444.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solution-1, max weight 14.5">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
-            <Text layoutX="55.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solution_2 max weigth 24.5">
+            <Text layoutX="28.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solution-2, max weight 24.5">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
-            <Text layoutX="486.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solution_3 max weigth 35">
+            <Text layoutX="433.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solution-3, max weight 35">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
-         </children>
-      </AnchorPane>
-   </center>
+         </children></AnchorPane>
+   </left>
 </BorderPane>

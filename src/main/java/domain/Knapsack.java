@@ -30,7 +30,7 @@ public class Knapsack {
     }
 
     //Devuelve una lista con los objetos agregados a la mochila
-    private Item[] solve(){
+    public Item[] solve(){
     bubbleSort(); //primero ordeno la lista de objetos tipo Item
         Item knapsackList[] = new Item[this.list.length];
         int i=0; int j=0;
