@@ -1,5 +1,6 @@
 package controller;
 
+import domain.KnightTour;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,6 +22,7 @@ public class KnigthTourProblemController {
 
     @javafx.fxml.FXML
     public void initialize() {
+        test();
 
         for (int i = 0; i < 8; i++) {
             final int colIndex = i;
@@ -34,12 +36,12 @@ public class KnigthTourProblemController {
 
     public ObservableList<List<String>> getData() {
         ObservableList<List<String>> data = FXCollections.observableArrayList();
-        KnigthTourData = KnigthTourData.replaceAll("\n", ""); //para eliminar los saltos de linea
-        KnigthTourData = KnigthTourData.replaceAll(" ", "");
         String a[] = KnigthTourData.split("");
         int count = 0;
         List<String> info = new ArrayList<>();
-        for (int i = 0; i < 81; i++) {
+        KnigthTourData = KnigthTourData.replaceAll("\n", ""); //para eliminar los saltos de linea
+
+        for (int i = 0; i < 64; i++) {
             info.add(a[i]);
             if (count++ == 8) {
                 data.add(info);
@@ -48,5 +50,11 @@ public class KnigthTourProblemController {
             }
         }
         return data;
+    }
+    public void test(){
+        KnightTour knightTour = new KnightTour();
+        textArea.setText("Knight Tour Problem solution for a 8x8 board\n"+
+                            knightTour.solveKnightTour(8,0,0));
+        this.KnigthTourData=knightTour.solveKnightTour(8,0,0);
     }
 }

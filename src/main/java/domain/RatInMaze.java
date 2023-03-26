@@ -54,7 +54,7 @@ public class RatInMaze {
             }
 
             // si no se encuentra una solución en ninguna dirección, se retrocede y marca la posición como no visitada
-            sol[x][y] = 1;
+            sol[x][y] = 0;
             return false;
         }
 

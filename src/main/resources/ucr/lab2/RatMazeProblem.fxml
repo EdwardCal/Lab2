@@ -21,7 +21,10 @@
                   </Text>
                </children>
             </Pane>
-            <TextArea fx:id="textArea" layoutX="1.0" layoutY="72.0" prefHeight="226.0" prefWidth="818.0" />
+            <TextArea fx:id="textArea" layoutX="1.0" layoutY="72.0" prefHeight="226.0" prefWidth="818.0">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font></TextArea>
             <Text layoutX="29.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rat In a Maze Problem Solution for a 8x8 board" wrappingWidth="195.79052734375">
                <font>
                   <Font size="25.0" />
