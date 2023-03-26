@@ -50,6 +50,7 @@ public class NQueenProblemController
         return data;
     }
 
+
     private void test() {
         NQueenProblem nQueen = new NQueenProblem();
         textArea.setText("N Queens Problem solution for a 8x8 board"
