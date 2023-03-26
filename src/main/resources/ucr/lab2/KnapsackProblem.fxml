@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,34 +20,10 @@
                      </font>
                   </Text>
                </children></Pane>
-            <TableView fx:id="tableView" layoutX="41.0" layoutY="151.0" prefHeight="200.0" prefWidth="261.0">
-              <columns>
-                <TableColumn prefWidth="107.0" text="Name" />
-                <TableColumn prefWidth="59.0" text="Value" />
-                  <TableColumn prefWidth="89.0" text="Weight" />
-              </columns>
-            </TableView>
-            <TableView fx:id="tableView1" layoutX="456.0" layoutY="151.0" prefHeight="200.0" prefWidth="261.0">
-               <columns>
-                  <TableColumn prefWidth="107.0" text="Name" />
-                  <TableColumn prefWidth="59.0" text="Value" />
-                  <TableColumn prefWidth="89.0" text="Weight" />
-               </columns>
-            </TableView>
-            <TableView fx:id="tableView2" layoutX="41.0" layoutY="413.0" prefHeight="200.0" prefWidth="261.0">
-               <columns>
-                  <TableColumn prefWidth="107.0" text="Name" />
-                  <TableColumn prefWidth="59.0" text="Value" />
-                  <TableColumn prefWidth="89.0" text="Weight" />
-               </columns>
-            </TableView>
-            <TableView fx:id="tableView3" layoutX="456.0" layoutY="413.0" prefHeight="200.0" prefWidth="261.0">
-               <columns>
-                  <TableColumn prefWidth="107.0" text="Name" />
-                  <TableColumn prefWidth="59.0" text="Value" />
-                  <TableColumn prefWidth="89.0" text="Weight" />
-               </columns>
-            </TableView>
+            <TableView fx:id="tableView" layoutX="41.0" layoutY="151.0" prefHeight="200.0" prefWidth="261.0" />
+            <TableView fx:id="tableView1" layoutX="456.0" layoutY="151.0" prefHeight="200.0" prefWidth="261.0" />
+            <TableView fx:id="tableView2" layoutX="41.0" layoutY="413.0" prefHeight="200.0" prefWidth="261.0" />
+            <TableView fx:id="tableView3" layoutX="456.0" layoutY="413.0" prefHeight="200.0" prefWidth="261.0" />
             <Text layoutX="125.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item List">
                <font>
                   <Font size="25.0" />

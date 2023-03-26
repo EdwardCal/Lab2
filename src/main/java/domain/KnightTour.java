@@ -18,12 +18,10 @@ public class KnightTour {
         board[row][col]=0;
 
             if (placeKnights(board, row, col, n, 1)) {
-                if (board[row][col]!=0){ // la primera posición se mantendra en cero
-                    result += "Solution does not exist for this position";
-                }else {
+
                     result += printBoard(board);
                 }
-            } else {
+             else {
 
                 result += "Solution does not exist for this position";
             }
