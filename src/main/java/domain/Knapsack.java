@@ -30,7 +30,7 @@ public class Knapsack {
     }
 
     //Devuelve una lista con los objetos agregados a la mochila
-    private Item[] solve(){
+    public Item[] solve(){
     bubbleSort(); //primero ordeno la lista de objetos tipo Item
         Item knapsackList[] = new Item[this.list.length];
         int i=0; int j=0;
@@ -55,8 +55,8 @@ public class Knapsack {
        double totalWeight=0;
        double totalValue=0;
        Item solution[] = solve();
-       String result="\nKNAPSACK PROBLEM SOLUTION";
-       result+="\nMAX WEIGHT: "+this.capacity;
+       String result="";
+       result+=""+this.capacity;
        result+="\nITEMS LIST...";
        result+="\n\t\tName\t\t\t\tValue\t\t\tWeight";
        int n = solution.length;
