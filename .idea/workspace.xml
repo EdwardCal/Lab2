@@ -7,6 +7,7 @@
     <list default="true" id="d930673b-dd58-4aa6-9571-e1387425c000" name="Changes" comment="&#10;Creación de la interfaz para knapsack">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/KnapsackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/KnapsackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/Knapsack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Knapsack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ucr/lab2/KnapsackProblem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ucr/lab2/KnapsackProblem.fxml" afterDir="false" />
     </list>
@@ -175,7 +176,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679495506633</updated>
-      <workItem from="1679791183209" duration="899000" />
+      <workItem from="1679791183209" duration="2303000" />
     </task>
     <task id="LOCAL-00001" summary="Lab2. I-2023">
       <created>1679500278241</created>
@@ -226,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679775266230</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="&#10;Creación de la interfaz para knapsack">
+      <created>1679792238214</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679792238214</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
