@@ -6,6 +6,7 @@ import domain.NQueenProblem;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,9 @@ public class KnapsackController {
     private TableView tableView3;
 
     private String knapsackData;
+    @javafx.fxml.FXML
+    private TextArea textAreaPrueba;
+
     @javafx.fxml.FXML
     public void initialize() {
         test();
@@ -44,17 +48,18 @@ public class KnapsackController {
 
         Knapsack knapsack1 = new Knapsack(items, 14.5);
         this.knapsackData = knapsack1.toString(); //para el table view
+        this.textAreaPrueba.setText(knapsack1.toString());
     }
 
     public ObservableList<List<String>> getData() {
         ObservableList<List<String>> data = FXCollections.observableArrayList();
         knapsackData = knapsackData.replaceAll("\n", "");
         knapsackData = knapsackData.replaceAll("\t", "");//para eliminar los saltos de linea
-        knapsackData = knapsackData.replaceAll("-", "");
-        String a[] = knapsackData.split(" ");
+        knapsackData = knapsackData.replaceAll(" ", "");//para eliminar los saltos de linea
+        String a[] = knapsackData.split(",");
         int count = 0;
         List<String> info = new ArrayList<>();
-        for (int i = 0; i < 64; i++) {
+        for (int i = 0; i < a.length; i++) {
             info.add(a[i]);
             if (count++ == 2) {
                 data.add(info);
@@ -64,4 +69,5 @@ public class KnapsackController {
         }
         return data;
     }
+    //return
 }

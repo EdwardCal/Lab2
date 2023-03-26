@@ -51,7 +51,7 @@ public class Knapsack {
     }
 
     @Override
-    public String toString() {
+    /*public String toString() {
        double totalWeight=0;
        double totalValue=0;
        Item solution[] = solve();
@@ -69,6 +69,22 @@ public class Knapsack {
         }
         result+="\nTOTALS:\t\t\t\t\t\t\t$"+util.Utility.format(totalValue);
         result+="\t\t\t"+util.Utility.format(totalWeight);
+        return result;
+    }*/
+
+    public String toString() {
+        double totalWeight=0;
+        double totalValue=0;
+        Item solution[] = solve();
+        int n = solution.length;
+        String result="";
+        for (int i = 0; i < n; i++) {
+            Item item = solution[i];
+            if(item==null) break; //rompe el bucle for
+            totalWeight+=item.getWeight();
+            totalValue+=item.getValue();
+            result+=item.toString();
+        }
         return result;
     }
 }

@@ -56,6 +56,18 @@ public class Item {
     }
 
     @Override
+    /*public String toString() {
+        *//*return "Item{" +
+                "name='" + name + '\'' +
+                ", value=" + value +
+                ", weight=" + weight +
+                ", media=" + media +
+                ", valueWeight=" + valueWeight +
+                '}';*//*
+        return String.format("%20s, %12.2f, %12.2f, %12.2f", this.name,
+                this.value, this.weight, this.valueWeight);
+    }*/
+
     public String toString() {
         /*return "Item{" +
                 "name='" + name + '\'' +
@@ -64,7 +76,7 @@ public class Item {
                 ", media=" + media +
                 ", valueWeight=" + valueWeight +
                 '}';*/
-        return String.format("%20s, %12.2f, %12.2f, %12.2f", this.name,
-                this.value, this.weight, this.valueWeight);
+        return String.format(this.name+","+
+                (float)this.value+","+(float)this.weight+","+(float)this.valueWeight+",");
     }
 }
