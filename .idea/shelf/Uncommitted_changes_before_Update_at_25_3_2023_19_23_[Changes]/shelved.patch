@@ -1,0 +1,161 @@
+Index: src/main/resources/ucr/lab2/RatMazeProblem.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.TableView?>\r\n<?import javafx.scene.control.TextArea?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<BorderPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"601.0\" prefWidth=\"824.0\" xmlns=\"http://javafx.com/javafx/19\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"controller.RatInMazeProblemController\">\r\n   <center>\r\n      <AnchorPane prefHeight=\"599.0\" prefWidth=\"824.0\" style=\"-fx-background-color: lightyellow;\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Pane prefHeight=\"72.0\" prefWidth=\"826.0\" style=\"-fx-background-color: orange;\">\r\n               <children>\r\n                  <Text layoutX=\"201.0\" layoutY=\"46.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Rat In a Maze Problem Solution\">\r\n                     <font>\r\n                        <Font name=\"Arial\" size=\"30.0\" />\r\n                     </font>\r\n                  </Text>\r\n               </children>\r\n            </Pane>\r\n            <TextArea fx:id=\"textArea\" layoutX=\"1.0\" layoutY=\"72.0\" prefHeight=\"226.0\" prefWidth=\"818.0\" />\r\n            <Text layoutX=\"29.0\" layoutY=\"429.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Rat In a Maze Problem Solution for a 8x8 board\" wrappingWidth=\"195.79052734375\">\r\n               <font>\r\n                  <Font size=\"25.0\" />\r\n               </font>\r\n            </Text>\r\n            <TableView fx:id=\"tableView\" layoutX=\"263.0\" layoutY=\"299.0\" prefHeight=\"300.0\" prefWidth=\"558.0\" />\r\n         </children>\r\n      </AnchorPane>\r\n   </center>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/ucr/lab2/RatMazeProblem.fxml b/src/main/resources/ucr/lab2/RatMazeProblem.fxml
+--- a/src/main/resources/ucr/lab2/RatMazeProblem.fxml	(revision 348837bd02b4f4557c1d796abf400d9bdae4022e)
++++ b/src/main/resources/ucr/lab2/RatMazeProblem.fxml	(date 1679793154777)
+@@ -21,7 +21,10 @@
+                   </Text>
+                </children>
+             </Pane>
+-            <TextArea fx:id="textArea" layoutX="1.0" layoutY="72.0" prefHeight="226.0" prefWidth="818.0" />
++            <TextArea fx:id="textArea" layoutX="1.0" layoutY="72.0" prefHeight="226.0" prefWidth="818.0">
++               <font>
++                  <Font name="Arial" size="20.0" />
++               </font></TextArea>
+             <Text layoutX="29.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rat In a Maze Problem Solution for a 8x8 board" wrappingWidth="195.79052734375">
+                <font>
+                   <Font size="25.0" />
+Index: src/main/java/domain/RatInMaze.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package domain;\r\n\r\npublic class RatInMaze {\r\n    // Función para imprimir la solución\r\n    public String printSolution(int[][] sol) {\r\n        int N = sol.length;\r\n        String result=\"\";\r\n        for (int i = 0; i < N; i++) {\r\n            for (int j = 0; j < N; j++) {\r\n                result+=sol[i][j]+\" \";\r\n            }\r\n            result+=\"\\n\";\r\n        }\r\n        return result;\r\n    }\r\n    public String printProblem(int[][] maze) {\r\n        int N = maze.length;\r\n        String result=\"\";\r\n        for (int i = 0; i < N; i++) {\r\n            for (int j = 0; j < N; j++) {\r\n                result+=maze[i][j]+\" \" ;\r\n            }\r\n            result+=\"\\n\";\r\n        }\r\n        return result;\r\n    }\r\n\r\n    // Función para verificar si una posición es segura\r\n    public static boolean isSafe(int[][] maze, int x, int y, int[][] sol) {\r\n        int N = maze.length;\r\n        return (x >= 0 && x < N && y >= 0 && y < N && maze[x][y] == 1);\r\n    }\r\n\r\n    // Función para resolver el problema de Rat in a Maze\r\n    public static boolean solveMazeUtil(int[][] maze, int x, int y, int[][] sol) {\r\n        // si se llega a la posición de salida, se retorna verdadero\r\n        if (x == maze.length - 1 && y == maze.length - 1) {\r\n            sol[x][y] = 2;\r\n            return true;\r\n        }\r\n\r\n        // si la posición actual es segura, se marca como visitada\r\n        if (isSafe(maze, x, y, sol)) {\r\n            sol[x][y] = 2;\r\n\r\n            // se mueve hacia adelante en la dirección x\r\n            if (solveMazeUtil(maze, x + 1, y, sol)) {\r\n                return true;\r\n            }\r\n\r\n            // si moverse en dirección x no lleva a una solución, se mueve hacia abajo en la dirección y\r\n            if (solveMazeUtil(maze, x, y + 1, sol)) {\r\n                return true;\r\n            }\r\n\r\n            // si no se encuentra una solución en ninguna dirección, se retrocede y marca la posición como no visitada\r\n            sol[x][y] = 1;\r\n            return false;\r\n        }\r\n\r\n        // si la posición actual no es segura, se retorna falso\r\n        return false;\r\n    }\r\n\r\n    // Función para resolver el problema de Rat in a Maze\r\n    public String solveMaze(int[][] maze) {\r\n        int N = maze.length;\r\n        int[][] sol = new int[N][N];\r\n\r\n\r\n\r\n\r\n        // se llama a la función recursiva para resolver el problema\r\n        if (solveMazeUtil(maze, 0, 0, sol) == false) {\r\n            return \"No hay solución para este laberinto\";\r\n        }\r\n\r\n        // se imprime la solución\r\n        return printSolution(sol);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/domain/RatInMaze.java b/src/main/java/domain/RatInMaze.java
+--- a/src/main/java/domain/RatInMaze.java	(revision 348837bd02b4f4557c1d796abf400d9bdae4022e)
++++ b/src/main/java/domain/RatInMaze.java	(date 1679793154786)
+@@ -54,7 +54,7 @@
+             }
+ 
+             // si no se encuentra una solución en ninguna dirección, se retrocede y marca la posición como no visitada
+-            sol[x][y] = 1;
++            sol[x][y] = 0;
+             return false;
+         }
+ 
+Index: src/test/java/domain/BackTrackingTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package domain;\r\n\r\nimport org.testng.annotations.Test;\r\n\r\nimport static org.testng.Assert.*;\r\n\r\npublic class BackTrackingTest {\r\n\r\n    @Test\r\n    public void test1() {\r\n        NQueenProblem nQueen = new NQueenProblem();\r\n        System.out.println(\"N Queens Problem solution for a 8x8 board\");\r\n        System.out.println(nQueen.solveNQueen(8));\r\n\r\n        System.out.println(\"N Queens Problem solution for a 4x4 board\");\r\n        System.out.println(nQueen.solveNQueen(4));\r\n    }\r\n    @Test\r\n    public void test2(){\r\n        RatInMaze rt= new RatInMaze();\r\n        int[][] maze1 = {\r\n                {1, 0, 0, 0},\r\n                {1, 1, 0, 1},\r\n                {0, 1, 0, 0},\r\n                {1, 1, 1, 1}\r\n        };\r\n        int maze2[][] = {\r\n                {1, 0, 0, 1, 1, 0, 0, 0},\r\n                {1, 0, 1, 1, 0, 1, 1, 1},\r\n                {1, 1, 1, 1, 1, 1, 0, 0},\r\n                {0, 1, 1, 1, 1, 1, 1, 1},\r\n                {1, 0, 1, 0, 1, 0, 1, 1},\r\n                {1, 0, 0, 1, 1, 1, 1, 0},\r\n                {1, 0, 0, 1, 1, 0, 1, 1},\r\n                {1, 0, 0, 1, 1, 0, 0, 1},\r\n        };\r\n\r\n        int maze3[][] = {\r\n                {1, 1, 1, 1, 1, 1, 0, 0},\r\n                {0, 0, 0, 1, 1, 1, 1, 1},\r\n                {1, 1, 1, 0, 1, 1, 0, 0},\r\n                {0, 1, 1, 1, 1, 1, 0, 1},\r\n                {1, 0, 1, 0, 1, 1, 1, 1},\r\n                {1, 0, 0, 1, 1, 1, 1, 0},\r\n                {1, 0, 0, 1, 1, 0, 1, 1},\r\n                {1, 0, 0, 1, 1, 0, 0, 1},\r\n        };\r\n        rt.printProblem(maze1);\r\n\r\n       rt.solveMaze(maze1);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/domain/BackTrackingTest.java b/src/test/java/domain/BackTrackingTest.java
+--- a/src/test/java/domain/BackTrackingTest.java	(revision 348837bd02b4f4557c1d796abf400d9bdae4022e)
++++ b/src/test/java/domain/BackTrackingTest.java	(date 1679793721983)
+@@ -46,7 +46,6 @@
+                 {1, 0, 0, 1, 1, 0, 0, 1},
+         };
+         rt.printProblem(maze1);
+-
+-       rt.solveMaze(maze1);
++        rt.solveMaze(maze1);
+     }
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d930673b-dd58-4aa6-9571-e1387425c000\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/domain/RatInMaze.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/controller/HelloController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/controller/HelloController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/controller/KnapsackController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/controller/KnapsackController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/test/java/domain/BackTrackingTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/test/java/domain/BackTrackingTest.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"TestNG Test Class\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_AUTO_UPDATE\" value=\"true\" />\r\n    <option name=\"PUSH_TAGS\">\r\n      <GitPushTagMode>\r\n        <option name=\"argument\" value=\"--tags\" />\r\n        <option name=\"title\" value=\"All\" />\r\n      </GitPushTagMode>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"Use Maven wrapper\" />\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2NNDArm1lHA3keqWjSIxo3cFMly\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;TestNG&quot;,\r\n    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.TestNG&quot;: &quot;&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"domain\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.Recents.Supers\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.RecentsKey\">\r\n      <recent name=\"domain\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"TestNG.BackTrackingTest\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"ucr.lab2.HelloApplication\" />\r\n      <module name=\"lab2\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"ucr.lab2.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <module name=\"Laboratory2\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <module name=\"Laboratory2\" />\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"BackTrackingTest\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"lab2\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"domain.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"domain\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"domain.BackTrackingTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"CLASS\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"BackTrackingTest.test2\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"lab2\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"domain.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"domain\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"domain.BackTrackingTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"test2\" />\r\n      <option name=\"TEST_OBJECT\" value=\"METHOD\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"KnapsackTest\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"lab2\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"domain.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"domain\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"domain.KnapsackTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"CLASS\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"TestNG.BackTrackingTest\" />\r\n        <item itemvalue=\"TestNG.BackTrackingTest.test2\" />\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n        <item itemvalue=\"TestNG.KnapsackTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d930673b-dd58-4aa6-9571-e1387425c000\" name=\"Changes\" comment=\"\" />\r\n      <created>1679495506633</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1679495506633</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Lab2. I-2023\">\r\n      <created>1679500278241</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679500278241</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Lab2. I-2023\">\r\n      <created>1679500617079</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679500617079</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Lab2. I-2023\">\r\n      <created>1679530308796</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679530308796</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Lab2. I-2023\">\r\n      <created>1679534882747</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679534882747</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Lab2. I-2023\">\r\n      <created>1679537759519</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679537759519</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"&#10;Creación de la interfaz para knapsack\">\r\n      <created>1679723814610</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679723814611</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"7\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Lab2. I-2023\" />\r\n    <MESSAGE value=\"&#10;Creación de la interfaz para knapsack\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"&#10;Creación de la interfaz para knapsack\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 348837bd02b4f4557c1d796abf400d9bdae4022e)
++++ b/.idea/workspace.xml	(date 1679793801337)
+@@ -4,11 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="d930673b-dd58-4aa6-9571-e1387425c000" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/RatInMaze.java" afterDir="false" />
++    <list default="true" id="d930673b-dd58-4aa6-9571-e1387425c000" name="Changes" comment="&#10;Creación de la interfaz para knapsack">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/HelloController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/KnapsackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/KnapsackController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/domain/RatInMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/RatInMaze.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/ucr/lab2/RatMazeProblem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ucr/lab2/RatMazeProblem.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/test/java/domain/BackTrackingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/domain/BackTrackingTest.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -20,8 +19,8 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="TestNG Test Class" />
+-        <option value="FxmlFile" />
+         <option value="Class" />
++        <option value="FxmlFile" />
+       </list>
+     </option>
+   </component>
+@@ -58,9 +57,15 @@
+   &quot;keyToString&quot;: {
+     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;TestNG&quot;,
+     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.TestNG&quot;: &quot;&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+ }</component>
+   <component name="RecentsManager">
+@@ -74,7 +79,7 @@
+       <recent name="domain" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="TestNG.BackTrackingTest">
++  <component name="RunManager" selected="Application.HelloApplication">
+     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="ucr.lab2.HelloApplication" />
+       <module name="lab2" />
+@@ -155,9 +160,9 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.HelloApplication" />
+         <item itemvalue="TestNG.BackTrackingTest" />
+         <item itemvalue="TestNG.BackTrackingTest.test2" />
+-        <item itemvalue="Application.HelloApplication" />
+         <item itemvalue="TestNG.KnapsackTest" />
+       </list>
+     </recent_temporary>
+@@ -170,6 +175,7 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1679495506633</updated>
++      <workItem from="1679791183209" duration="899000" />
+     </task>
+     <task id="LOCAL-00001" summary="Lab2. I-2023">
+       <created>1679500278241</created>
+@@ -213,8 +219,18 @@
+       <option name="project" value="LOCAL" />
+       <updated>1679723814611</updated>
+     </task>
+-    <option name="localTasksCounter" value="7" />
++    <task id="LOCAL-00007" summary="&#10;Creación de la interfaz para knapsack">
++      <created>1679775266230</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1679775266230</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
