@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d930673b-dd58-4aa6-9571-e1387425c000" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/RatInMaze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/KnapsackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/KnapsackController.java" afterDir="false" />
+    <list default="true" id="d930673b-dd58-4aa6-9571-e1387425c000" name="Changes" comment="KnightTour class">
       <change beforePath="$PROJECT_DIR$/src/test/java/domain/BackTrackingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/domain/BackTrackingTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

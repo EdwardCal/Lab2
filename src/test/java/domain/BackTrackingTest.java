@@ -49,4 +49,9 @@ public class BackTrackingTest {
 
        rt.solveMaze(maze1);
     }
+    @Test
+    public void test3(){
+        KnightTour knightTour = new KnightTour();
+        System.out.println(knightTour.solveKnightTour(8,0,0));
+    }
 }
