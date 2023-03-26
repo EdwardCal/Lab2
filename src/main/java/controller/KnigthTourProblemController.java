@@ -26,8 +26,8 @@ public class KnigthTourProblemController {
 
         for (int i = 0; i < 8; i++) {
             final int colIndex = i;
-            TableColumn<List<String>, String> column = new TableColumn<>("col-" + (i + 1));
-            column.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().get(colIndex)));
+            TableColumn<List<String>, String> column = new TableColumn<>("col-"+(i+1));
+            column.setCellValueFactory(data->new SimpleStringProperty(data.getValue().get(colIndex)));
             tableView.getColumns().add(column);
         }
         tableView.setItems(getData());
@@ -36,14 +36,13 @@ public class KnigthTourProblemController {
 
     public ObservableList<List<String>> getData() {
         ObservableList<List<String>> data = FXCollections.observableArrayList();
-        String a[] = KnigthTourData.split("");
         int count = 0;
         List<String> info = new ArrayList<>();
         KnigthTourData = KnigthTourData.replaceAll("\n", ""); //para eliminar los saltos de linea
-
+        String a[] = KnigthTourData.split("");
         for (int i = 0; i < 64; i++) {
             info.add(a[i]);
-            if (count++ == 8) {
+            if (count++ == 7) {
                 data.add(info);
                 info = new ArrayList<>();
                 count = 0;
