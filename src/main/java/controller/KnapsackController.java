@@ -57,6 +57,10 @@ public class KnapsackController {
         knapsackData = knapsackData.replaceAll("\t", "");//para eliminar los saltos de linea
         knapsackData = knapsackData.replaceAll(" ", "");//para eliminar los saltos de linea
         String a[] = knapsackData.split(",");
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+
+        }
         int count = 0;
         List<String> info = new ArrayList<>();
         for (int i = 0; i < a.length; i++) {

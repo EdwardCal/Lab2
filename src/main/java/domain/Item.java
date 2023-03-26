@@ -76,7 +76,7 @@ public class Item {
                 ", media=" + media +
                 ", valueWeight=" + valueWeight +
                 '}';*/
-        return String.format(this.name+","+
-                (float)this.value+","+(float)this.weight+","+(float)this.valueWeight+",");
+        return this.name+","+
+                (float)this.value+","+(float)this.weight+","+(float)this.valueWeight+",";
     }
 }
