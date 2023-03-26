@@ -31,7 +31,7 @@
                   </AnchorPane>
               </content>
             </ScrollPane>
-            <TableView fx:id="tableView" layoutX="426.0" layoutY="360.0" prefHeight="294.0" prefWidth="381.0" />
+            <TableView fx:id="tableView" layoutX="426.0" layoutY="360.0" prefHeight="302.0" prefWidth="381.0" />
             <Text layoutX="67.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Knight Tour Solver for a 8x8 board" wrappingWidth="296.099609375">
                <font>
                   <Font size="36.0" />
