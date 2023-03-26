@@ -51,9 +51,7 @@ public class HelloController {
     }
 
     @FXML
-    void knightTour(ActionEvent event) {
-
-    }
+    void knightTour(ActionEvent event) {loadPage("KnigthTourProblem.fxml");}
 
     @FXML
     void knightTourOnMousePressed(MouseEvent event) {

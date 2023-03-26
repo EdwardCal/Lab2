@@ -52,7 +52,7 @@ public class BackTrackingTest {
     @Test
     public void test3(){
         KnightTour knightTour = new KnightTour();
-        System.out.println("Knight Tour Problem solution for a 8x8 board")
+        System.out.println("Knight Tour Problem solution for a 8x8 board");
         System.out.println(knightTour.solveKnightTour(8,0,0));
     }
 }

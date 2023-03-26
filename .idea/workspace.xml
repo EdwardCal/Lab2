@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d930673b-dd58-4aa6-9571-e1387425c000" name="Changes" comment="KnightTour class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/KnigthTourProblemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ucr/lab2/KnigthTourProblem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/domain/BackTrackingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/domain/BackTrackingTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TestNG Test Class" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -70,7 +74,7 @@
       <recent name="domain" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.BackTrackingTest">
+  <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ucr.lab2.HelloApplication" />
       <module name="lab2" />
@@ -151,9 +155,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="TestNG.BackTrackingTest" />
         <item itemvalue="TestNG.BackTrackingTest.test2" />
-        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="TestNG.KnapsackTest" />
       </list>
     </recent_temporary>
@@ -209,7 +213,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679723814611</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="KnightTour class">
+      <created>1679793224850</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679793224850</updated>
+    </task>
+    <task id="LOCAL-00008" summary="KnightTour class">
+      <created>1679793299437</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679793299437</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +244,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lab2. I-2023" />
     <MESSAGE value="&#10;Creación de la interfaz para knapsack" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;Creación de la interfaz para knapsack" />
+    <MESSAGE value="KnightTour class" />
+    <option name="LAST_COMMIT_MESSAGE" value="KnightTour class" />
   </component>
 </project>
